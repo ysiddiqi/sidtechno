@@ -46,6 +46,8 @@ nav .links{
 }
 nav .links li{
     list-style: none;
+    position: relative;
+    
 }
 nav .links a{
     display: block;
@@ -55,6 +57,47 @@ nav .links a{
     color: #fff;
     text-decoration:none;
 }
+  li:hover::before {  
+    content: "";
+    position: absolute;
+    height: 33.33%;
+    width: 0;
+    background-color:  #e67dc1;
+    right: 0;
+    z-index: 0;
+    top: 33.33%;
+    transition: all 0.5s;
+    
+ }
+  li:hover::after {
+    content: "";
+    position: absolute;
+    height: 33.33%;
+    width: 0;
+    background-color: #e67dc1;
+    left: 0;
+    z-index: 0;
+    bottom: 0;
+    transition: all 0.5s;  
+ }
+  li a::before {
+    position: absolute;
+    content: "";
+    height: 33.33%;
+    width: 0;
+    background-color:  #e67dc1;
+    bottom: 66.66%;
+    left: 0;
+    transition: all 0.5s;
+      
+ }
+  li:hover::before,
+ li:hover::after,
+ li:hover a::before{
+   width: 100%; 
+   opacity: 0.5;
+      
+  }  
 
 #nav-toggle {
     position: absolute;
@@ -85,17 +128,13 @@ nav .icon-burger .line{
     nav .links {
         float: none;
         position: fixed;
+        display: block;
         z-index: 9;
         left: 0;
         right: 0;
-        top: 100px;
-        bottom: 100%;
-        width: auto;
-        height: auto;
-        flex-direction: column;
-        justify-content: space-evenly;
-        background-color: rgba(0,0,0,.8);
-        overflow: hidden;
+        top: 200px;
+        bottom: 120%;
+        /* width: auto; */
         box-sizing: border-box;
         transition: all .5s ease-in-out;
     }
@@ -191,14 +230,15 @@ nav .icon-burger .line{
   }
   #services .container-services h2{
     float: right;
-    margin-top: -306px;
-    margin-right: 203px;
+    margin-top: 130px;
+    margin-right: -260px;
+
     
 }
 #services .container-services p{
     float: right;
-    margin-top: -230px;
-    margin-right: 165px;
+    margin-top: -200px;
+    margin-right: 180px;
 
 }
 #services .container-services .btn{
@@ -216,8 +256,6 @@ nav .icon-burger .line{
 .logo-images img{
 width: 70px;
 height: 60px;
-border-radius: 10px;
-cursor: pointer;
 }
 .logo-images img:hover{
     transform: rotate(20deg);
@@ -252,7 +290,20 @@ cursor: pointer;
     /* text-align: center; */
     /* padding: 25px 25px 25px; */
 /* } */
-/* #portfolio .container-design .sh-icon{ */
+/* #portfolio .container-design .sh-ic<div class="row">
+            <div class="container-design">
+                <div class="col-lg-4">
+                            <div class="card" style="width:300px">
+                                <img class="card-img-top" src="./images/sleek-design.jpg" alt="Card image">
+                                <div class="card-body">
+                                    <h4 class="card-title">Sleek Design</h4>
+                                    <p class="card-text">Web Design Lane provides professional website designs with
+                                        corporate
+                                        and user-centric features to stand out from the crowd.</p>
+
+                                </div>
+                            </div>
+        on{ */
     /* position: relative; */
     /* max-width: 100px; */
     /* margin: 0px auto 20px; */
@@ -315,8 +366,30 @@ cursor: pointer;
     width: 400px;
     height: 400px;
 }
-
-
-    
-    
-
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #008CBA;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+  }
+  .container:hover .overlay {
+    width: 100%;
+  }
+  
+  .text, .para {
+    white-space: nowrap; 
+    color: rgb(24, 17, 17);
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+  
